@@ -85,7 +85,7 @@ namespace CrewChiefV4.Events
                     string track = currentGameState.SessionData.TrackDefinition.name;
                     string car = currentGameState.carClass.getClassIdentifier();
                     SetupFileParser.CarSetup setup = null;
-                    if (CrewChief.gameDefinition.gameEnum == GameEnum.ASSETTO_CORSA_COMPETIZIONE)
+                    if (CrewChief.gameDefinition.gameEnum == GameEnum.ACC)
                     {
                         string setupPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Assetto Corsa Competizione", "Customs", "Setups", car, track, "base_rec.json");
                         if (System.IO.File.Exists(setupPath)) setup = SetupFileParser.ParseACCSetup(setupPath);
@@ -99,7 +99,7 @@ namespace CrewChiefV4.Events
                     {
                         CrewChiefV4.ConsoleLogger.Log.Verbose($"[Stint Start] Loaded Setup Snapshot: FrontARB={setup.FrontARB}, RearARB={setup.RearARB}");
                     }
-                    sessionRecorder.StartStint(CrewChief.gameDefinition?.name ?? "Assetto", car, track, setup);
+                    sessionRecorder.StartStint(CrewChief.gameDefinition?.friendlyName ?? "Assetto", car, track, setup);
                 }
                 catch (Exception ex)
                 {
@@ -116,7 +116,7 @@ namespace CrewChiefV4.Events
                     string track = currentGameState.SessionData.TrackDefinition.name;
                     string car = currentGameState.carClass.getClassIdentifier();
                     string baseRecPath = "";
-                    if (CrewChief.gameDefinition.gameEnum == GameEnum.ASSETTO_CORSA_COMPETIZIONE)
+                    if (CrewChief.gameDefinition.gameEnum == GameEnum.ACC)
                     {
                         baseRecPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Assetto Corsa Competizione", "Customs", "Setups", car, track, "base_rec.json");
                     }
@@ -138,13 +138,13 @@ namespace CrewChiefV4.Events
                 }
             }
 
-            if (CrewChief.gameDefinition.gameEnum == GameEnum.ASSETTO_64BIT || CrewChief.gameDefinition.gameEnum == GameEnum.ASSETTO_64BIT_UI)
+            if (CrewChief.gameDefinition.gameEnum == GameEnum.ASSETTO_64BIT || CrewChief.gameDefinition.gameEnum == GameEnum.ASSETTO_32BIT)
             {
-                var wrapper = currentGameState.rawGameData as CrewChiefV4.ACS.ACSSharedMemoryReader.ACSStructWrapper;
+                var wrapper = currentGameState.rawGameData as CrewChiefV4.assetto.ACSSharedMemoryReader.ACSStructWrapper;
                 if (wrapper != null)
                 {
                     var acsPhysics = wrapper.data.acsPhysics;
-                    var unifiedPhysics = new TelemetryData
+                    var unifiedPhysics = new CrewChiefV4.HeadlessSimulation.TelemetryData
                     {
                         WheelSlip = acsPhysics.wheelSlip,
                         AccG = acsPhysics.accG,
@@ -156,13 +156,13 @@ namespace CrewChiefV4.Events
                     ProcessACTelemetry(currentGameState, unifiedPhysics, wrapper.data.acsGraphic.normalizedCarPosition);
                 }
             }
-            else if (CrewChief.gameDefinition.gameEnum == GameEnum.ASSETTO_CORSA_COMPETIZIONE)
+            else if (CrewChief.gameDefinition.gameEnum == GameEnum.ACC)
             {
                 var wrapper = currentGameState.rawGameData as CrewChiefV4.ACC.ACCSharedMemoryReader.ACCStructWrapper;
                 if (wrapper != null)
                 {
                     var accPhysics = wrapper.data.accPhysics;
-                    var unifiedPhysics = new TelemetryData
+                    var unifiedPhysics = new CrewChiefV4.HeadlessSimulation.TelemetryData
                     {
                         WheelSlip = accPhysics.slipRatio,
                         AccG = accPhysics.accG,
@@ -228,7 +228,7 @@ namespace CrewChiefV4.Events
                     string car = CrewChief.currentGameState.carClass.getClassIdentifier();
 
                     SetupFileParser.CarSetup setup = null;
-                    if (CrewChief.gameDefinition.gameEnum == GameEnum.ASSETTO_CORSA_COMPETIZIONE)
+                    if (CrewChief.gameDefinition.gameEnum == GameEnum.ACC)
                     {
                         string setupPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Assetto Corsa Competizione", "Customs", "Setups", car, track, "base_rec.json");
                         if (System.IO.File.Exists(setupPath)) setup = SetupFileParser.ParseACCSetup(setupPath);
