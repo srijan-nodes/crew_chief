@@ -1548,14 +1548,14 @@ namespace CrewChiefV4
 
         #endregion
         public System.Windows.Forms.CheckBox recordSession;
-        private System.Windows.Forms.Button forceVersionCheckButton;
-        private System.Windows.Forms.ListBox buttonActionSelect;
-        private System.Windows.Forms.ListBox controllersList;
-        private System.Windows.Forms.Button assignButtonToAction;
-        private System.Windows.Forms.Button deleteAssigmentButton;
-        private System.Windows.Forms.Button propertiesButton;
+        public System.Windows.Forms.Button forceVersionCheckButton;
+        public System.Windows.Forms.ListBox buttonActionSelect;
+        public System.Windows.Forms.ListBox controllersList;
+        public System.Windows.Forms.Button assignButtonToAction;
+        public System.Windows.Forms.Button deleteAssigmentButton;
+        public System.Windows.Forms.Button propertiesButton;
         internal System.Windows.Forms.ComboBox speechRecognitionDeviceBox;
-        private System.Windows.Forms.ComboBox messagesAudioDeviceBox;
+        public System.Windows.Forms.ComboBox messagesAudioDeviceBox;
         internal System.Windows.Forms.ComboBox backgroundAudioDeviceBox;
         public System.Windows.Forms.TextBox filenameTextbox;
         private System.Windows.Forms.Label filenameLabel;
@@ -1582,9 +1582,9 @@ namespace CrewChiefV4
         internal System.Windows.Forms.Label codriverStyleLabel;
         internal System.Windows.Forms.ComboBox codriverStyleBox;
         internal System.Windows.Forms.ToolTip mainWindowTooltip;
-        private System.Windows.Forms.Button scanControllers;
-        private System.Windows.Forms.Button buttonEditCommandMacros;
-        private Button AddRemoveActions;
+        public System.Windows.Forms.Button scanControllers;
+        public System.Windows.Forms.Button buttonEditCommandMacros;
+        public Button AddRemoveActions;
         public Button buttonVRWindowSettings;
         public Button buttonMyName;
         private Timer autoDetectTimer;
@@ -1601,10 +1601,9 @@ namespace CrewChiefV4
         private TableLayoutPanel tableLayoutPanelBackgroundVolume;
         private Label backgroundVolumeSliderLabel;
         public Button startApplicationButton;
-        private TableLayoutPanel tableLayoutPanelMessagesVolume;
-        private Label messagesVolumeSliderLabel;
-        private TrackBar messagesVolumeSlider;
-        private TrackBar backgroundVolumeSlider;
+        public Label messagesVolumeSliderLabel;
+        public TrackBar messagesVolumeSlider;
+        public TrackBar backgroundVolumeSlider;
         internal TableLayoutPanel tableLayoutPanelMain;
         private TableLayoutPanel tableLayoutPanelActions;
         private TableLayoutPanel tableLayoutPanelControllers;
@@ -1612,8 +1611,8 @@ namespace CrewChiefV4
         internal TableLayoutPanel tableLayoutPanelActorsSRmode;
         private TableLayoutPanel tableLayoutPanelSpeechrecognitionDevice;
         private TableLayoutPanel tableLayoutPanelMessagesDevice;
-        private ComboBox comboBoxSpeechRecognitionModes;
-        private Label labelSpeechRecognitionMode;
+        public ComboBox comboBoxSpeechRecognitionModes;
+        public Label labelSpeechRecognitionMode;
         private TableLayoutPanel tableLayoutPanelActors;
         internal GroupBox groupBoxSoundUpdateEtc;
         internal TableLayoutPanel tableLayoutPanelTestSounds;
@@ -1633,11 +1632,11 @@ namespace CrewChiefV4
         internal TableLayoutPanel tableLayoutPanelSrModeAndBackgroundDevice;
         internal GroupBox groupBoxVoiceRecognitionMode;
         private TableLayoutPanel tableLayoutPanelVoiceRecognitionModes;
-        private RadioButton listenIfNotPressedButton;
-        private RadioButton triggerWordButton;
-        private RadioButton voiceDisableButton;
-        private RadioButton holdButton;
-        private RadioButton alwaysOnButton;
-        private RadioButton toggleButton;
+        public RadioButton listenIfNotPressedButton;
+        public RadioButton triggerWordButton;
+        public RadioButton voiceDisableButton;
+        public RadioButton holdButton;
+        public RadioButton alwaysOnButton;
+        public RadioButton toggleButton;
     }
 }
