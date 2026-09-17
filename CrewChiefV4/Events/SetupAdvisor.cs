@@ -19,7 +19,7 @@ namespace CrewChiefV4.Events
         private SessionDataRecorder sessionRecorder = new SessionDataRecorder();
         private int isOptimizerRunning = 0;
         
-        private void ProcessACTelemetry(GameStateData currentGameState, TelemetryData physics, float normalizedPosition)
+        private void ProcessACTelemetry(GameStateData currentGameState, CrewChiefV4.HeadlessSimulation.TelemetryData physics, float normalizedPosition)
         {
             var activeTurn = segmenter.UpdatePosition(currentGameState.PositionAndMotionData.DistanceRoundTrack, normalizedPosition);
             
