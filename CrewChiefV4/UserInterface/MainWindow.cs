@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -1209,6 +1209,7 @@ namespace CrewChiefV4
             this.constructingWindow = true;
 
             InitializeComponent();
+            ModernUIThemer.ApplyTheme(this);
 
             DarkModeForms.DarkModeCS.IsDarkModeCSEnabled = UserSettings.GetUserSettings().getBoolean("enable_dark_mode");
             if (DarkModeForms.DarkModeCS.IsDarkModeCSEnabled)
@@ -1247,6 +1248,7 @@ namespace CrewChiefV4
 
             this.SuspendLayout();
             Application.DoEvents();
+            ModernUIStyle.Apply(this);
             SetFrameHeading();
 
             SetupNotificationTrayIcon();

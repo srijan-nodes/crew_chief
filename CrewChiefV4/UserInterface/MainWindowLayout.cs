@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -55,6 +55,11 @@ namespace CrewChiefV4
             hideSoundUpdate();
             hideSoundTest();
             hideBackgroundDeviceWindow();
+            
+            // Modern UI Layout Restructuring
+            if (mw.tableLayoutPanelMain != null) {
+                mw.tableLayoutPanelMain.Padding = new System.Windows.Forms.Padding(10);
+            }
         }
 
         // The console window may be half height and/or

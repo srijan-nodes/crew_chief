@@ -1,0 +1,8 @@
+Boot trace 0
+Boot trace 1
+Boot trace 2
+Boot trace LoadSplashImage 0
+Boot trace 3
+Boot trace MW 0
+Boot trace MW 1
+Boot trace MW 2
