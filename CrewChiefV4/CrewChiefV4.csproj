@@ -520,6 +520,7 @@
     <Compile Include="HeadlessSimulation\SessionDataRecorder.cs" />
     <Compile Include="Events\SetupAdvisor.cs" />
     <Compile Include="UserInterface\ModernUIThemer.cs" />
+    <Compile Include="UserInterface\ModernUIBuilder.cs" />
     <Compile Include="UserInterface\TopicWindows\TopicWindowSetupAdvisor.cs" />
     <Compile Include="ConsoleLogger.cs" />
     <Compile Include="AllGames\GameStateReaderFactory.cs" />

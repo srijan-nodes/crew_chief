@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -17,9 +17,24 @@ namespace CrewChiefV4
     {
         public static void addPropertyToListboxData(string propertyName, string valueEnumTypeName)
         {
+            if (string.IsNullOrEmpty(valueEnumTypeName))
+            {
+                return;
+            }
             if (!listBoxData.ContainsKey(propertyName))
             {
-                listBoxData.Add(propertyName, getListBoxItemsForEnum(propertyName, Type.GetType(valueEnumTypeName, true)));
+                try
+                {
+                    Type t = Type.GetType(valueEnumTypeName, false);
+                    if (t != null)
+                    {
+                        listBoxData.Add(propertyName, getListBoxItemsForEnum(propertyName, t));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Unable to load enum type for property " + propertyName + ": " + ex.Message);
+                }
             }
 
             // Note that it's also possible to hard code the contents of a listbox here if it's not backed by an enum, by getting items manually - e.g.
