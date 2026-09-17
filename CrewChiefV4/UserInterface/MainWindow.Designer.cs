@@ -1568,13 +1568,13 @@ namespace CrewChiefV4
         private System.Windows.Forms.ProgressBar driverNamesProgressBar;
         private System.Windows.Forms.ProgressBar personalisationsProgressBar;
         internal System.Windows.Forms.Label spotterNameLabel;
-        private System.Windows.Forms.Label messagesAudioDeviceLabel;
+        public System.Windows.Forms.Label messagesAudioDeviceLabel;
         internal System.Windows.Forms.Label speechRecognitionDeviceLabel;
         internal System.Windows.Forms.Label backgroundAudioDeviceLabel;
         internal System.Windows.Forms.ComboBox spotterNameBox;
-        private System.Windows.Forms.LinkLabel donateLink;
-        private System.Windows.Forms.TextBox smokeTestTextBox;
-        private System.Windows.Forms.Button buttonSmokeTest;
+        public System.Windows.Forms.LinkLabel donateLink;
+        public System.Windows.Forms.TextBox smokeTestTextBox;
+        public System.Windows.Forms.Button buttonSmokeTest;
         internal System.Windows.Forms.Label chiefNameLabel;
         internal System.Windows.Forms.ComboBox chiefNameBox;
         internal System.Windows.Forms.Label codriverNameLabel;
@@ -1599,8 +1599,9 @@ namespace CrewChiefV4
         public RichTextBox consoleTextBox;
         internal TableLayoutPanel tableLayoutPanelTop;
         private TableLayoutPanel tableLayoutPanelBackgroundVolume;
-        private Label backgroundVolumeSliderLabel;
+        public Label backgroundVolumeSliderLabel;
         public Button startApplicationButton;
+        private TableLayoutPanel tableLayoutPanelMessagesVolume;
         public Label messagesVolumeSliderLabel;
         public TrackBar messagesVolumeSlider;
         public TrackBar backgroundVolumeSlider;
