@@ -1,4 +1,4 @@
-﻿name: Build CrewChiefV4
+name: Build CrewChiefV4
 
 on:
   push:
@@ -26,6 +26,11 @@ jobs:
 
       - name: Build CrewChiefV4
         run: msbuild CrewChiefV4\CrewChiefV4.csproj /p:Configuration=Release /p:Platform=AnyCPU /verbosity:minimal
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '7.0.x'
 
       - name: Run test_runner Unit Tests
         run: dotnet test test_runner\test_runner.csproj -c Release
