@@ -1,4 +1,4 @@
-﻿using System.Windows.Forms;
+using System.Windows.Forms;
 namespace CrewChiefV4
 {
     partial class MainWindow
@@ -1559,12 +1559,12 @@ namespace CrewChiefV4
         internal System.Windows.Forms.ComboBox backgroundAudioDeviceBox;
         public System.Windows.Forms.TextBox filenameTextbox;
         private System.Windows.Forms.Label filenameLabel;
-        private System.Windows.Forms.TextBox playbackInterval;
-        private System.Windows.Forms.Label app_version;
+        public System.Windows.Forms.TextBox playbackInterval;
+        public System.Windows.Forms.Label app_version;
         private System.Windows.Forms.ProgressBar soundPackProgressBar;
-        private System.Windows.Forms.Button downloadSoundPackButton;
-        private System.Windows.Forms.Button downloadDriverNamesButton;
-        private System.Windows.Forms.Button downloadPersonalisationsButton;
+        public System.Windows.Forms.Button downloadSoundPackButton;
+        public System.Windows.Forms.Button downloadDriverNamesButton;
+        public System.Windows.Forms.Button downloadPersonalisationsButton;
         private System.Windows.Forms.ProgressBar driverNamesProgressBar;
         private System.Windows.Forms.ProgressBar personalisationsProgressBar;
         internal System.Windows.Forms.Label spotterNameLabel;
