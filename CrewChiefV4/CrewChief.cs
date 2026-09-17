@@ -401,7 +401,7 @@ namespace CrewChiefV4
                 eventsList.Add("AlarmClock", alarmClock);
             }
 
-            if (Game.ASSETTO_32BIT || Game.ASSETTO_64BIT || Game.ASSETTO_128 || Game.ACC || Game.ASSETTO_EVO)
+            if (Game.ASSETTO_32BIT || Game.ASSETTO_64BIT || Game.ACC || Game.ASSETTO_EVO)
             {
                 eventsList.Add("SetupAdvisor", new SetupAdvisor(audioPlayer));
             }
